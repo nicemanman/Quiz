@@ -69,6 +69,11 @@ function App() {
           Start
         </button>
       ) : null}
+      {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+        <button className="settings" >
+          Settings
+        </button>
+      ) : null}
       {!gameOver && <p className="score">Score: {score}</p>}
       {loading && <p>Loading questions...</p>}
       {!loading && !gameOver && (
@@ -87,6 +92,7 @@ function App() {
         number !== TOTAL_QUESTIONS - 1 && (
           <button className="next" onClick={nextQuestion}>Next Question</button>
         )}
+        <h3>Created by niceman, 2020</h3>
     </Wrapper>
     </>
   );
